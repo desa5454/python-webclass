@@ -1,0 +1,29 @@
+username=input('enter your name: ')
+usergender=input('enter your Gender: ')
+userage=int(input('enter your age: '))
+userWeight=float(input("enter your weight: "))
+userheight=float(input("enter your height: "))
+
+def BMI():
+    BMI = userWeight / (userheight*userheight)
+    return BMI
+   
+
+print(BMI())
+
+def BMR_male():
+     bmr = 10 * userWeight + 6.25 * userheight - 5 * userage + 5
+     return bmr
+def BMR_Female():
+    bmr = 10 * userWeight + 6.25 * userheight - 5 * userage - 161
+    return bmr
+
+if usergender== "male":
+    print(f"Your BMR is: {BMR_male()} calories/day")
+elif usergender == "female":
+    print(f"Your BMR is: {BMR_Female()} calories/day")
+else:
+    print("Gender not recognized enter male or female.")
+    
+    
+    

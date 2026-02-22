@@ -1,0 +1,109 @@
+Installation & Environment Setup
+
+1) Install Python
+Check installation
+python --version
+
+2) Create Virtual Environment 
+python -m venv venv
+
+Activate:
+Windows: venv\Scripts\activate
+
+3) Install Django
+pip install django
+
+Create a New Django Project
+django-admin startproject project_name
+cd project_name
+
+Run Development Server
+python manage.py runserver
+Open in browser: http://127.0.0.1:8000/
+
+Create a Django App
+python manage.py startapp app_name
+
+Register the app in settings.py:
+INSTALLED_APPS = [
+    'app_name',
+]
+After created:
+to use or create anything create a file name "templates" inside app then you that to create html,python ,etc..
+
+once created create a fuction inside view like def home(request):
+                                                   return render("hello")
+
+then go to the url and configure it by first import-ing it like 'from django.view import . or home'
+then below path('home','home',name="home_url")
+then you go to home page and call it
+
+
+A Model in Django is a Python class that defines:
+
+The structure of your database table
+
+The fields (columns)
+
+The relationships between tables
+
+Every model you create becomes a table in the database.
+- CharField → Short text
+- TextField → Long text
+- IntegerField → Whole numbers
+- FloatField → Decimal numbers
+- BooleanField → True/False
+- DateTimeField → Date & time
+- EmailField → Email
+- ImageField → Images
+- FileField → Files
+
+eg:
+from django.db import models
+
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    quantity = models.IntegerField()
+    price = models.FloatField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+there are relationship like one to one, one to many, many to many 
+
+ADMIN PANEL
+Create admin user:
+python manage.py createsuperuser
+
+After creating or changing models:
+python manage.py makemigrations ->recored the changes
+python manage.py migrate-> save the changes
+
+
+github part
+VS Code → File → Open Folder → select project
+
+Initialize Git
+terminal:git init
+
+Commit Your Files
+Click + (Stage All)
+Type message: Initial commit or first commit
+Click Commit
+
+Create Repo on GitHub
+Copy the repo URL.
+
+Connect to GitHub
+
+In VS Code terminal:
+git remote add origin https://github.com/username/repo-name.git
+git branch -M main
+git push -u origin main
+
+After changes
+git add .
+git commit -m "your message"
+git push
+

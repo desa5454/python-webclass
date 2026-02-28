@@ -37,6 +37,10 @@ once created create a fuction inside view like def home(request):
 then go to the url and configure it by first import-ing it like 'from django.view import . or home'
 then below path('home','home',name="home_url")
 then you go to home page and call it
+like using {% example in example%}
+               {{example.name}}
+
+           {% endfor %}
 
 
 A Model in Django is a Python class that defines:
